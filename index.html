@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+<title>LYZEEBOYY - AM PREMIUM</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@1&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="bg"></div>
+<canvas id="c"></canvas>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><div class="logo-dot"></div>AM luxury</div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <div class="owner">OWNER - LYZEEBOYY</div>
+    <button class="ham" id="ham" onclick="toggleMenu()"><span></span></button>
+  </div>
+</nav>
+
+<!-- SIDEBAR HAMBURGER -->
+<div class="sidebar" id="sidebar">
+  <a class="menu-item" href="#apa" onclick="toggleMenu()">Apa itu AM Premium <small>PENJELASAN LENGKAP</small></a>
+  <a class="menu-item" href="#fitur" onclick="toggleMenu()">Fitur Premium <small>KENAPA HARUS PREMIUM</small></a>
+  <a class="menu-item" href="#cara" onclick="toggleMenu()">Cara Aktivasi <small>STEP BY STEP</small></a>
+  <a class="menu-item" href="#dash" onclick="toggleMenu()">Dashboard Aktivasi <small>BUKA FORM</small></a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge"><i></i> PREMIUM ACTIVATION BY LYZEEBOYY</div>
+  <div class="title">
+    <div class="t1"><span>MAKE</span></div>
+    <div class="t2"><span>premium</span></div>
+    <div class="t1"><span>BEYOND</span></div>
+  </div>
+  <p class="desc">Alight Motion Premium unlock semua fitur pro tanpa watermark untuk editing video sultan.</p>
+  <button class="btn-hero" onclick="document.getElementById('apa').scrollIntoView({behavior:'smooth'})">APA ITU AM PREMIUM?</button>
+</div>
+
+<!-- PENJELASAN APA ITU AM PREMIUM -->
+<section id="apa" class="explain">
+  <div class="explain-card">
+    <div class="label">PENJELASAN / 01</div>
+    <h2 class="h2-exp">apa itu <em>AM Premium?</em></h2>
+    <p class="p-exp">
+      Alight Motion (AM) adalah aplikasi editing video & animasi pro di HP. 
+      Versi gratis ada watermark dan fitur dikunci. <br><br>
+      <b>AM Premium</b> adalah versi full unlock: tanpa watermark, export 4K, 
+      1000+ font premium, efek keyframe, blending, vector, dan semua fitur pro kebuka 1 tahun penuh.
+    </p>
+    <div class="grid-3">
+      <div class="mini"><b>TANPA WATERMARK</b><span>Export bersih tanpa logo AM</span></div>
+      <div class="mini"><b>EXPORT 4K 60FPS</b><span>Kualitas sultan buat TikTok & YouTube</span></div>
+      <div class="mini"><b>SEMUA EFEK PRO</b><span>Keyframe, CC, Preset JJ viral</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="fitur" class="explain">
+  <div class="explain-card dark">
+    <div class="label">FITUR / 02</div>
+    <h2 class="h2-exp">kenapa harus <em>premium?</em></h2>
+    <ul class="list">
+      <li><b>1000+ Font & Stiker Premium</b> - gak perlu cari di luar lagi</li>
+      <li><b>Efek Velocity & Smooth</b> - preset jedag-jedug auto smooth</li>
+      <li><b>Timeline Tanpa Batas</b> - layer gak dibatasi kayak versi free</li>
+      <li><b>Backup Project Cloud</b> - project aman gak hilang</li>
+    </ul>
+    <div class="hint">Catatan: Ini aktivasi via link verifikasi resmi. Kamu cukup cek email Spam, tempel link, akun langsung jadi premium.</div>
+  </div>
+</section>
+
+<!-- DASHBOARD FORM -->
+<div id="dash" class="dash">
+  <div class="card"><div class="inner">
+    <div class="glow"></div><div class="shimmer"></div>
+    <div class="progress"><div class="dot active"><i></i></div><div class="dot" id="d2"><i></i></div><div class="dot" id="d3"><i></i></div></div>
+
+    <div id="s1" class="step">
+      <div id="cara" class="label">STEP 01 / 03 - CARA AKTIVASI</div>
+      <div class="h2">masukkan <em>email kamu</em></div>
+      <p class="p-small">1. Masukkan email yang dipakai daftar Alight Motion.<br>2. Cek Gmail folder Spam / Promosi.<br>3. Salin link verifikasi yang masuk.</p>
+      <input id="email" type="email" inputmode="email" placeholder="lyzeeboyy@gmail.com" autocomplete="email">
+      <button class="btn" onclick="go(2)">KIRIM MAGIC LINK</button>
+    </div>
+
+    <div id="s2" class="step" style="display:none">
+      <div class="label">STEP 02 / 03</div><div class="h2">tempel <em>link spam</em></div>
+      <div class="hint" id="eShow"></div>
+      <input id="url" type="url" inputmode="url" placeholder="https://...">
+      <button class="btn" id="btnVerif" onclick="goFinal()">VERIFIKASI & AKTIVASI</button>
+    </div>
+
+    <div id="s4" class="step" style="display:none">
+      <div class="success-head"><div></div></div>
+      <div class="ok">horee sudahh selesaii<br><span>premium akun alight motion nyaa</span></div>
+      <div class="hint" style="text-align:center">Akun <b id="finalEmail" style="color:#fff"></b> berhasil (SIMULASI)<br>by LYZEEBOYY</div>
+      <button class="btn-open" onclick="openAM()">BUKA ALIGHT MOTION</button>
+      <button class="btn-reset" onclick="location.reload()">RESET</button>
+    </div>
+  </div></div>
+</div>
+
+<div class="spacer" id="spacer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
